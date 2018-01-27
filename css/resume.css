@@ -50,6 +50,7 @@ html, body {
 #side-nav {
     height: 1440px;
     margin-bottom: 0;
+    margin-top:30px;
     padding: 0; }
 
 /* Attach footer to left column */
