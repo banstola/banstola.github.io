@@ -175,7 +175,7 @@
                         <h4>Experiences </h4>
 
                         <h5 class="role">Flashnode Oy - Software Developer</h5>
-                        <small>2017-January - current <span id="current-job-time">(1 year 5 month)</span></small>
+                        <small>2017-January - current <span data-start-date="2017-01-01" id="current-job"></span></small>
                         <p>
 
                             At flashnode , I am software development team member to create next generation of
@@ -234,7 +234,31 @@
 </main>
 
 </div>
+<script>
 
+ function dateDiff(date) {
+
+    var startUnix = Math.floor(new Date(date) / 1000);
+    var todayUnix = Math.floor(Date.now() / 1000);
+    var secondsPerDay = 24 * 60 * 60;
+    var daysPerYear = 365.4;
+    var daysPerMonth = 30;
+    var days = Math.abs((todayUnix - startUnix) / secondsPerDay);
+    var years = Math.floor(days / daysPerYear);
+    var months = Math.floor((days % daysPerYear) / daysPerMonth);
+     
+     return years + "years "+ (months !==0 ? months+ "months" : '');
+}
+    
+    $( document ).ready(function() {
+    
+        var currentJobSpan = $('#current-job').data('start-date');
+        var diff = dateDiff(currentJobSpan);
+        
+        $('#current-job').html(diff);
+        
+});
+</script>
 </body>
 
 </html>
