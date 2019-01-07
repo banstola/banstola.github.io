@@ -247,7 +247,7 @@
     var years = Math.floor(days / daysPerYear);
     var months = Math.floor((days % daysPerYear) / daysPerMonth);
      
-     return years + "years "+ (months !==0 ? months+ "months" : '');
+     return years + " years "+ (months !==0 ? months+ " months" : '');
 }
     
     $( document ).ready(function() {
@@ -255,7 +255,7 @@
         var currentJobSpan = $('#current-job').data('start-date');
         var diff = dateDiff(currentJobSpan);
         
-        $('#current-job').html(diff);
+        $('#current-job').html('( '+diff+ ' )');
         
 });
 </script>
